@@ -5,4 +5,12 @@ resource "aws_budgets_budget" "monthly" {
   limit_unit        = var.aws_budgets_budget.limit_unit
   time_period_start = var.aws_budgets_budget.time_period_start
   time_unit         = var.aws_budgets_budget.time_unit
+
+  notification {
+    comparison_operator        = var.aws_budgets_budget.comparison_operator
+    threshold                  = var.aws_budgets_budget.threshold
+    threshold_type             = var.aws_budgets_budget.threshold_type
+    notification_type          = var.aws_budgets_budget.notification_type
+    subscriber_email_addresses = var.aws_budgets_budget.subscriber_email_addresses
+  }
 }
